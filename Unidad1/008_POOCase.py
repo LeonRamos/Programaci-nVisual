@@ -49,3 +49,18 @@ cuenta1.consultar_saldo()
 cuenta2 = CuentaPremium("Carlos Gómez", saldo=500)
 cuenta2.retirar(800)
 cuenta2.consultar_saldo()
+
+#Explicación paso a paso
+#Clase: Es un molde para crear objetos del mismo tipo. Aquí, CuentaBancaria describe cómo debe ser y funcionar una cuenta bancaria.
+
+#Objeto: Es una instancia de una clase. Por ejemplo, cuenta1 y cuenta2 son objetos creados a partir de las clases.
+
+#Atributos: Son datos asociados al objeto, como el titular o el saldo.
+
+#Métodos: Son acciones que puede hacer el objeto, como depositar, retirar, o consultar saldo.
+
+#Encapsulamiento: Protege los datos internos, asegurando que sólo los métodos pueden cambiar el saldo de forma controlada.
+
+#Herencia: CuentaPremium hereda de CuentaBancaria, añadiendo la funcionalidad de sobregiro.
+
+#Polimorfismo: El método retirar se comporta diferente en la clase hija.
