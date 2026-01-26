@@ -1,4 +1,11 @@
-Ejemplopara ESP32 (Arduino IDE) con un formulario que tiene dos botones: “Encender” y “Apagar”. El ESP32 lee qué botón se pulsó y lo muestra por Serial, y podrías usarlo para controlar un pin.
+
+
+
+Ejemplo **completo** para ESP32 (Arduino IDE) con un formulario que tiene dos botones: “Encender” y “Apagar”. El ESP32 lee qué botón se pulsó y lo muestra por Serial, y podrías usarlo para controlar un pin.
+
+```cpp
+#include <WiFi.h>
+#include <WebServer.h>
 
 const char* ssid     = "TU_SSID";
 const char* password = "TU_PASSWORD";
@@ -100,9 +107,10 @@ void loop() {
 }
 ```
 
-Puntos importantes:  
-- El formulario tiene `action="/accion"` y `method="GET"`. [techtutorialsx](https://techtutorialsx.com/2017/12/17/esp32-arduino-http-server-getting-query-parameters/)
-- Los dos botones usan `name="accion"` y valores distintos (`encender`, `apagar`), así el servidor sabe qué botón se pulsó. [stackoverflow](https://stackoverflow.com/questions/48/multiple-submit-buttons-in-an-html-form)
-- En `handleAccion()` se leen los parámetros con `server.arg("accion")` y `server.arg("valor")`, y se actúa en consecuencia. [luisllamas](https://www.luisllamas.es/en/esp8266-server-parameters/)
+Puntos importantes:
 
-Si quieres que funcione en Wokwi con WiFi simulada, cambia `ssid` y `password` a `"Wokwi-GUEST"` y `""` y añade el canal 6 en `WiFi.begin("Wokwi-GUEST", "", 6);`. [docs.wokwi](https://docs.wokwi.com/guides/esp32-wifi)
+- El formulario tiene `action="/accion"` y `method="GET"`.
+- Los dos botones usan `name="accion"` y valores distintos (`encender`, `apagar`), así el servidor sabe qué botón se pulsó.
+- En `handleAccion()` se leen los parámetros con `server.arg("accion")` y `server.arg("valor")`, y se actúa en consecuencia.
+
+Si quieres que funcione en Wokwi con WiFi simulada, cambia `ssid` y `password` a `"Wokwi-GUEST"` y `""` y añade el canal 6 en `WiFi.begin("Wokwi-GUEST", "", 6);`.
